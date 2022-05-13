@@ -1,0 +1,228 @@
+:root {
+  /* blood red */
+  --BR: #6B0504;
+  /* chinese red */
+  --CR: #A3320B;
+  /* golden rod */
+  --WR: #E6AF2E;
+  /* white */
+  --W: #FBFFFE;
+  /* dark jungle green */
+  --DJG: #001514;
+  /* fontsizefull */
+  --fs: 25px;
+  /*fontsizeresponsive*/
+  --fsr: 18px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'League Spartan';
+  font-weight: 400;
+  position: relative;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs);
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  display: flex;
+  justify-content: end;
+  background-color: var(--BR);
+  padding: 1rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+}
+nav > a {
+  text-decoration: none;
+  color: var(--W);
+  margin: 0 1rem;
+}
+nav > a:hover {
+  color: var(--WR);
+  cursor: pointer;
+}
+nav >a:active {
+  transform: scale(1.1);
+}
+#welcome-section{
+  flex-grow: 1;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--DJG);
+  color: var(--WR);
+}
+.welcome-name {
+  transform: scale(0.9);
+  animation: scale 2.5s forwards cubic-bezier(0.5,1,0.89,1);
+}
+.welcome-description {
+  color: var(--W);
+  transform: scale(0.9);
+  animation: scale 2.5s forwards cubic-bezier(0.5,1,0.89,1);
+}
+span {
+  opacity: 0;
+  filter: blur(4px);
+}
+
+#projects{
+  min-height: 100vh;
+  padding: 4rem 1rem 2rem 1rem;
+  background-color:var(--WR);
+}
+.projects-list{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#projects>h1{
+  color: var(--DJG);
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+.project-card {
+  width: 25vw;
+}
+.project-title {
+  font-size: calc(1.2*var(--fs));
+  color: var(--BR);
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+.image-project{
+  display: flex;
+  align-self: center;
+  height: 25vw;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+}
+.image-project>img{
+  width: 90%;
+}
+.image-project>img:hover{
+  cursor: pointer;
+  border: 1px var(--DJG) solid;
+}
+.image-project>img:active{
+  filter: blur(4px);
+  transform: scale(1.05);
+}
+.project-description {
+  align-self: center;
+  text-align: start;
+  font-size: calc(0.6*var(--fs));
+  flex-grow: 1;
+}
+.project-link {
+  text-decoration: none;
+  text-align: center;
+  color: var(--DJG);
+  margin: 0 0 1rem 0;
+}
+.project-link:hover{
+  cursor: pointer;
+  color: var(--CR);  
+}
+.project-link:active{
+  transform: scale(1.1);
+}
+
+#contact{
+  background-color: var(--CR);
+  height: 100vh;
+  justify-content: center;
+}
+
+.title-contact {
+  align-self: center;
+  padding: 1rem;
+}
+
+.contact-info {
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  padding: 0.5rem;
+  background-color: var(--DJG);
+  color: var(--W);
+  font-size: small;
+  justify-content: end;
+}
+
+.item-contact {
+  color:var(--W);
+  margin:0.5rem;
+}
+
+.item-contact:hover {
+  cursor: pointer;
+  color: var(--DJG);
+}
+
+h1>span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11,0,0.5,0);
+}
+h1>span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11,0,0.5,0);
+}
+h1>span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11,0,0.5,0);
+}
+h1>span:nth-child(3) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11,0,0.5,0);
+}
+h1>span:nth-child(4) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11,0,0.5,0);
+}
+h3>em>span:nth-child(1) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11,0,0.5,0);
+}
+h3>em>span:nth-child(2) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11,0,0.5,0);
+}
+@media (max-width: 768px){
+  body {
+    font-size: var(--fsr);
+  }
+  .project-card{
+    width: 40vw;
+  }
+  .image-project{
+    height: 40vw;
+  }
+}
+@media (max-width: 500px){
+  .project-card{
+    width: 60vw;
+  }
+  .image-project{
+    height: 60vw;
+  }
+}
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter:blur(0);
+  }
+}
+
+@keyframes scale {
+  100% {
+    transform:scale(1);
+  }
+}
